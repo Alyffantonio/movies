@@ -1,0 +1,52 @@
+# PYTHON / DJANGO
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.log
+*.pot
+*.py[cod]
+*$py.class
+
+# MEDIA & STATIC
+/media/
+staticfiles/
+static/
+
+# IDE / AMBIENTE
+.vscode/
+.idea/
+
+
+# LOGS / TEMP
+*.pid
+tmp/
+logs/
+
+# VIRTUAL ENVIRONMENTS
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# SISTEMA
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# TESTES / COVERAGE
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+
+# CACHES
+/__pycache__/
+/migrations/__pycache__/
+
+# PLANILHAS (DADOS TEMPORÁRIOS)
+/*.xlsx
+*.csv
