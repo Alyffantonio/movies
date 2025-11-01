@@ -8,10 +8,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# MEDIA & STATIC
-/media/
-staticfiles/
-static/
 
 # IDE / AMBIENTE
 .vscode/
