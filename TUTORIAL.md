@@ -9,8 +9,10 @@ Este vídeo mostra como clonar o projeto, configurar o arquivo `.env` e iniciar 
 
 
 ### 2. Usando a Aplicação
-Este vídeo mostra a aplicação em funcionamento, como fazer o upload de uma planilha e baixar o relatório processado.
+Este vídeo mostra o **MovieProject** em funcionamento na prática.  
+o **processamento assíncrono com Celery e RabbitMQ**, até o **download do relatório final (.xlsx)** gerado automaticamente.
 
-[▶️ Assista ao vídeo prático](./docs/video/pratica.mp4)
+[![Assista ao Tutorial Prático no YouTube](https://img.youtube.com/vi/bzUlwS3DQWE/hqdefault.jpg)](https://youtu.be/bzUlwS3DQWE)
+
 
 
