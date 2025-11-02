@@ -49,7 +49,7 @@ def get_rotten_tomatoes(titulo):
         return "N/A"
 
     except Exception as e:
-        print(f"❌ [Selenium] Erro ao buscar '{titulo}' no Rotten Tomatoes: {e}")
+        print(f"erro ao buscar '{titulo}' no Rotten Tomatoes: {e}")
         return "N/A"
     finally:
         if driver:
@@ -57,10 +57,7 @@ def get_rotten_tomatoes(titulo):
 
 
 def get_metacritic(titulo):
-    """
-       Busca a nota "Metascore" no Metacritic.com.
-       ATUALIZADO com novos seletores 'data-testid' que são mais robustos.
-       """
+
     driver = None
     try:
         driver = setup_driver()
@@ -69,21 +66,18 @@ def get_metacritic(titulo):
 
         wait = WebDriverWait(driver, 10)
 
-        # 1. Tentar clicar no botão de aceitar cookies
         try:
             cookie_button = wait.until(EC.element_to_be_clickable((By.ID, "onetrust-accept-btn-handler")))
             cookie_button.click()
-            print("🟡 [Metacritic] Botão de cookies aceito.")
+            print("Botão de cookies aceito.")
             time.sleep(1)
         except Exception:
-            print("🟡 [Metacritic] Botão de cookies não encontrado.")
+            print(" Botão de cookies não encontrado.")
 
-        # 2. CORREÇÃO: Esperar o primeiro item de resultado usando data-testid
         first_result = wait.until(
             EC.presence_of_element_located((By.CSS_SELECTOR, "a[data-testid='search-result-item']"))
         )
 
-        # 3. CORREÇÃO: Dentro do primeiro resultado, encontrar a nota usando data-testid
         score_element = first_result.find_element(By.CSS_SELECTOR, "div[data-testid='product-metascore'] span")
 
         score = score_element.text
@@ -94,7 +88,7 @@ def get_metacritic(titulo):
         return "N/A"
 
     except Exception as e:
-        print(f"❌ [Selenium] Erro ao buscar '{titulo}' no Metacritic: {e}")
+        print(f" Erro ao buscar '{titulo}' no Metacritic: {e}")
         return "N/A"
     finally:
         if driver:
