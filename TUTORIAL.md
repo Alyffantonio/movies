@@ -5,7 +5,7 @@ Aqui está o passo a passo para configurar e rodar o projeto.
 ### 1. Configuração do Ambiente
 Este vídeo mostra como clonar o projeto, configurar o arquivo `.env` e iniciar os containers do Docker.
 
-[▶️ Assista ao vídeo de configuração](./docs/video/configuracao.mp4)
+[![Assista ao Tutorial de Configuração no YouTube](https://img.youtube.com/vi/oYS_q8AhC2E/hqdefault.jpg)](https://youtu.be/oYS_q8AhC2E)
 
 
 ### 2. Usando a Aplicação
