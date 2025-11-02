@@ -62,11 +62,35 @@ A forma mais simples de executar o projeto é utilizando o **Docker Compose**, q
 2. Preencha-o com base no modelo [aqui](#-variáveis-de-ambiente).  
 3. Obtenha uma chave de API em [OMDb API](https://www.omdbapi.com/apikey.aspx).
 
-###  Iniciar os Containers
+---
+
+### Iniciar os Containers
 
 ```bash
 docker-compose up --build
 ```
+
+Após os containers subirem, siga os passos abaixo para finalizar a configuração:
+
+1. Acesse o container **django_movies** (ou o nome equivalente do seu container Django).
+
+   * No **Docker Desktop**, vá até a aba **Containers**, clique em **django_movies** e depois em **Exec**.
+
+2. Dentro do terminal do container, execute os seguintes comandos:
+
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   python manage.py collectstatic --noinput
+   ```
+
+   Isso garante que:
+
+   * Todas as **migrações do banco de dados** sejam aplicadas corretamente.
+   * Todos os **arquivos estáticos** sejam coletados e disponibilizados no ambiente Docker.
+
+---
+
 
 ###  Acessar a Aplicação
 
@@ -83,12 +107,6 @@ A aplicação estará disponível em:
 | `celery_worker` | Worker que processa as tarefas assíncronas |
 
 ---
-
-###  Dependências
-
-```bash
-pip install -r requirements.txt
-```
 
 
 ##  Endpoints / Rotas Principais
@@ -178,11 +196,6 @@ O projeto utiliza **pytest** com integração Django.
 Dentro do container `web`:
 ```bash
 docker-compose exec web pytest
-```
-
-Ou localmente:
-```bash
-pytest
 ```
 
 ---
