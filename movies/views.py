@@ -1,9 +1,19 @@
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.http import require_POST
-
-from .models import Upload
+from django.views.decorators.http import require_POST, require_GET
+from django.shortcuts import render
+from .models import Upload, Report
 from .tasks import processar_upload
+
+def page_inicial(request):
+
+    reports = Report.objects.all().order_by('-created_at')
+
+    context = {
+        'reports': reports,
+    }
+
+    return render(request, 'movies/base.html', context)
 
 
 @csrf_exempt

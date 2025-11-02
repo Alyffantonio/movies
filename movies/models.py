@@ -30,10 +30,13 @@ class Movie(models.Model):
     elenco = models.TextField(blank=True, null=True)
     sinopse = models.TextField(blank=True, null=True)
     genero = models.CharField(max_length=255, blank=True, null=True)
-
+    diretor = models.CharField(max_length=255, blank=True, null=True)
     nota_imdb = models.CharField(max_length=10, blank=True, null=True)
+
     nota_metacritic = models.CharField(max_length=10, blank=True, null=True)
+
     nota_rotten = models.CharField(max_length=10, blank=True, null=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
