@@ -13,10 +13,18 @@ filmes = [
     "Rogue One: A Star Wars Story ",
     "Solo: A Star Wars Story "
 ]
-
+# filmes = [
+#     "A Era do Gelo",
+#     "A Era do Gelo 2: O Degelo",
+#     "A Era do Gelo 3: Despertar dos Dinossauros",
+#     "A Era do Gelo 4: Deriva Continental",
+#     "A Era do Gelo: O Big Bang",
+#     "A Era do Gelo: As Aventuras de Buck"
+# ]
 df = pd.DataFrame(filmes, columns=['Titulo'])
 
-nome_arquivo = "filmes.xlsx"
+nome_arquivo = "filmes_star_wars.xlsx"
+# nome_arquivo = "era_do_gelo.xlsx"
 
 df.to_excel(nome_arquivo, index=False)
 
