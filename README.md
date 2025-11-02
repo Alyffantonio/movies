@@ -130,24 +130,26 @@ SELENIUM_DRIVER_PATH=/usr/bin/chromedriver
 ```
 /movie_project (root)
  ├── media/              # Arquivos de upload e relatórios gerados
- ├── movie_project/      # Configurações principais do Django
- │    ├── settings.py
- │    ├── urls.py
- │    └── celery.py
- ├── movies/
- │    ├── controller.py
- │    ├── models.py
- │    ├── tasks.py
- │    ├── views.py
- │    ├── urls.py
- │    ├── omdb_client.py
- │    └── selenium_scraper.py
- ├── templates/
- ├── static/
- ├── docker-compose.yml
- ├── Dockerfile
- ├── manage.py
- └── requirements.txt
+ ├── movie_project/      # Configurações do projeto Django
+ │    ├── settings.py    # Arquivo principal de configurações
+ │    ├── urls.py        # URLs globais (ex: /admin)
+ │    └── celery.py      # Configuração do App Celery
+ ├── movies/             # App principal "movies"
+ │    ├── controller.py   # Endpoints da API (upload, delete)
+ │    ├── models.py       # Modelos (Upload, Movie, Report)
+ │    ├── tasks.py        # Lógica do Celery (processamento do arquivo)
+ │    ├── views.py        # Views da página principal (listar relatórios)
+ │    ├── urls.py         # URLs do app (/, /api/upload, /api/delete)
+ │    ├── omdb_client.py  # Cliente da OMDb API
+ │    └── selenium_scraper.py # Web scrapers (Rotten Tomatoes, Metacritic)
+ ├── templates/          # Templates HTML
+ ├── static/             # Arquivos estáticos (JS, CSS)
+ ├── .env                # Arquivo de variáveis de ambiente (local)
+ ├── docker-compose.yml  # Orquestração dos containers
+ ├── Dockerfile          # Definição do container da aplicação web
+ ├── manage.py           # Utilitário de linha de comando do Django
+ └── requirements.txt    # Dependências Python
+
 ```
 
 ---
